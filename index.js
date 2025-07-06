@@ -1,7 +1,7 @@
-import { WebSocket, WebSocketServer } from "ws";
-import jwt from "jsonwebtoken";
+const { WebSocketServer } = require("ws");
+const jwt = require("jsonwebtoken");
+const { prismaClient } = require("./prisma"); // No .js extension needed in CJS
 const JWT_SECRET = "123212321";
-import { prismaClient } from "./prisma.js";
 
 const wss = new WebSocketServer({ port: 8080 });
 
